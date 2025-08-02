@@ -8,6 +8,8 @@ To set up this prefab, use Pastebin to host the list it is whitelisted by VRChat
 It is recommended to leave the paste visibility on Unlisted, but Public works just as fine. You cannot use Private for visibility.
 After creating your pastes, get the "Raw" version's URL and put it into the script. The Raw link will look something like this: https://pastebin.com/raw/xxxxxxx
 
+Make sure you have TextMeshPro & its Essential Resources imported into your world project.
+
 To properly set up the list, format the list like this:
 
 Avatar ID, Avatar Name, Creator
