@@ -12,5 +12,6 @@ Includes modified code from the original **DateTime_UI** script by [Jetdog8808](
 
 ## Scripts in this project:
 - FPS Display (#C) | Displays your FPS count.
+- Time Since Display (#C) | Time since any specific time set.
 - Date & Time Display (Modified from [Jetdog8808's](https://github.com/jetdog8808/Jetdogs-Prefabs-Udon) own DateTime_UI Script) (#C) | Displays the current Date and Time.
 - Player Tracking: Follow Head (#C) | These scripts follow a part of the local player's body.
