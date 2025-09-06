@@ -24,7 +24,7 @@ A prefab to make announcements in your VRChat worlds.
 
 ### Bad Examples
 - `Everyone from his group is trash and should leave.`
-- `Come to my room for some fun ;)`
+- `Come to my room for some naughty fun ;)`
 - `This world is rigged and the mods are corrupt.`
 - `Buy crypt now! Visit this very legitimate website!`
 - `I hate you all and hope something bad happens to you.`
