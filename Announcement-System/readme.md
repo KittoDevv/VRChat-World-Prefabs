@@ -3,7 +3,7 @@ A prefab to make announcements in your VRChat worlds.
 
 <img width="695" height="380" alt="Screenshot 2025-09-05 191403" src="https://github.com/user-attachments/assets/fc800e26-c393-4135-b12d-4d93997f8a57" />
 
-**NOTE:** Depending on how you use it, it could break VRChat's Community Guidelines. Do not use it to share anything offensive or that breaks VRChat’s rules. You might be held responsible for what gets shown.
+**NOTE:** Depending on how you use it, it could break VRChat's Community Guidelines. Do not use it to share anything offensive or that breaks VRChat’s rules. You might be held responsible for what gets shown. Examples are given for what and what not to do below at the end of this README.
 
 ## Features
 - Can be used with Reimajo's Admin Tool Panel (Paid Asset)
