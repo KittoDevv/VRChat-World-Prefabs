@@ -31,3 +31,9 @@ You can also enable prefixes and customize them freely in the inspector.
 
 <img width="420" height="289" alt="Screenshot 2025-09-06 084902" src="https://github.com/user-attachments/assets/6c4b4c3f-d17e-40d8-966e-fb4c44a332d6" />
 
+## Remote Text Loader
+Loads text from sites like Pastebin to display to players.
+
+This can be useful to display updates, news, or changelogs.
+
+<img width="470" height="312" alt="Screenshot 2025-09-06 102528" src="https://github.com/user-attachments/assets/5430ea77-9106-4f60-b4d8-4b3603172f7d" />
