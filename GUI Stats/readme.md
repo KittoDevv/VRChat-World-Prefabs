@@ -23,9 +23,11 @@ It should be as accurate as the FPS counter in the quick menu in VRChat.
 ## Time Since Display
 A customizable display that lets you know how long it has been since a certain time. 
 
-It can also be used to count down to something, like a date or time.
+It can also be used to count down to something, like a date or time, toggling the "Countdown" mode to true in the inspector.
 
 You can hide individual parts of the display, like the dates (Years, Months, Days) and time (Hours, Minutes, Seconds).
+
+You can also enable prefixes and customize them freely in the inspector. 
 
 <img width="420" height="289" alt="Screenshot 2025-09-06 084902" src="https://github.com/user-attachments/assets/6c4b4c3f-d17e-40d8-966e-fb4c44a332d6" />
 
