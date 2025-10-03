@@ -13,7 +13,7 @@ public class AvatarShelf : UdonSharpBehaviour
     [Space(-8)]
     [Header("Remote Avatar List | Prefab by Kitto Dev")]
     [Space(-8)]
-    [Header("Updated 9/5/2025 | Version 1.01")]
+    [Header("Updated 9/5/2025 | Version 1.1")]
 
     [Header("Remote Config")]
     [Tooltip("Raw Pastebin URL (e.g., https://pastebin.com/raw/abc123) to pull avatar list from. Format each line as: 'AvatarID, AvatarName, CreatorName'")]
@@ -54,14 +54,14 @@ public class AvatarShelf : UdonSharpBehaviour
 
     void OnEnable()
     {
-        currentPage = 0; // Reset to first page when enabled
-        UpdatePage();
+        LoadList();
     }
 
     public override void OnStringLoadSuccess(IVRCStringDownload result)
     {
         string raw = result.Result;
         avatarLines = raw.Split(new[] { '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries);
+        currentPage = 0; // Reset to first page on new load
         UpdatePage();
     }
 
