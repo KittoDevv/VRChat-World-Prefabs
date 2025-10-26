@@ -5,12 +5,35 @@ A prefab to make announcements in your VRChat worlds.
 
 **NOTE:** Depending on how you use it, it could break VRChat's Community Guidelines. Do not use it to share anything offensive or that breaks VRChat’s rules. You might be held responsible for what gets shown. Examples are given for what and what not to do below at the end of this README.
 
-## Features
+Along with it comes a Join/Leave Notification System. Though very basic, it can work alongside the Announcement System.
+
+<img width="549" height="199" alt="Screenshot 2025-10-26 160210" src="https://github.com/user-attachments/assets/259624ba-6582-460b-b954-52647dd64fe9" />
+
+Also, another thing along with it is a Notification System. For scripting, it should be triggered, or rather invoked via `Interact();` through the `_interact` method in Udon.
+The best use cases for the Notification System would be for Interactions, like Locked Doors, saying "This door is locked.", or for anything that would use preset, preconfigured pop-ups.
+
+<img width="901" height="200" alt="Screenshot 2025-10-26 160354" src="https://github.com/user-attachments/assets/f996fedc-ad25-4c96-9836-6e34763e4a67" />
+
+To prevent issues, it's highly recommended to make all notifications and announcement systems use the same TextMeshPro and Objects to prevent issues like overlapping text or other issues, and to ensure it works flawlessly. I will also include a prefab that has everything together in case you can't put it together yourself. The prefab is the Complete Notification System.
+
+## Announcement System Features
 - Can be used with Reimajo's Admin Tool Panel (Paid Asset)
 - Remotely editable whitelist using Raw Text Links like Pastebin
 - Local Name Whitelist
 - Disable Whitelist Checks (though not recommended for public worlds)
 - Hide the GUI from non-whitelisted players (via "Destroy If Not Staff" toggle)
+- Adjustable Display Length and Fade Speed
+
+## Notification System Features
+- Editable Preset Notification
+- Togglable "Notification" Prefix
+- Show only local or send to others only, or send to everyone. (Local & Global)
+- Trigger itself via Collider Triggers
+- Disable Notification Sound
+- Adjustable Display Length and Fade Speed
+
+## Join/Leave System Features
+- Disable Notification Sound
 - Adjustable Display Length and Fade Speed
 
 ## Examples
