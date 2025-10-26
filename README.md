@@ -10,6 +10,7 @@ Includes modified code from the original **DateTime_UI** script by [Jetdog8808](
 - Simple Persistent Toggle (Udon Graph) | A simple prefab/example of using Persistent Saving.
 - Remote Avatar List (#C) | A prefab that lets you manage your World's Avatar library without having to update your world to add more!
 - Announcement System (#C) | A world announcement system that sends an instance-wide message to all users.
+  This also includes a basic Join/Leave Notification System, as well as a Notification System for preset notifications for many use cases, like for player interactions.
 
 ## Scripts in this project:
 - FPS Display (#C) | Displays your FPS count.
