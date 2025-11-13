@@ -18,5 +18,5 @@ Includes modified code from the original **DateTime_UI** script by [Jetdog8808](
 - Time Since Display (#C) | Time since any specific time set. Also doubles as a countdown clock.
 - Player Counter Display (#C) | Shows the number of players currently connected in the instance.
 - Date & Time Display (Modified from [Jetdog8808's](https://github.com/jetdog8808/Jetdogs-Prefabs-Udon) own DateTime_UI Script) (#C) | Displays the current Date and Time.
-- Player Tracking: Follow Head (#C) | These scripts follow a part of the local player's body.
+- Player Tracking (#C) | These scripts follow a part of the local player's body.
 - Remote Text Loader (#C) | Load a remote text URL from sites like Pastebin. Useful for news, updates, and changelogs.
