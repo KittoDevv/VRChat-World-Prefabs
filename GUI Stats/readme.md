@@ -20,6 +20,12 @@ It should be as accurate as the FPS counter in the quick menu in VRChat.
 
 <img width="413" height="149" alt="Screenshot 2025-09-06 083930" src="https://github.com/user-attachments/assets/1ae4c5e6-6d48-44a2-8183-fd3cb6987475" />
 
+## Player Counter Display
+Shows the number of currently connected players in the current instance.
+
+<img width="264" height="165" alt="Screenshot 2025-11-13 072236" src="https://github.com/user-attachments/assets/acd38314-8845-43a3-8f29-0eec70e09b00" />
+
+
 ## Time Since Display
 A customizable display that lets you know how long it has been since a certain time. 
 
