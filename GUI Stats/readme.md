@@ -8,6 +8,7 @@ They should also allow for less frequent updates for performance, reducing redun
 
 ## Date/Time Display
 A modified/fork of Jetdog's DateTime_UI script. 
+([Jetdog8808's original DateTime_UI script found here.](https://github.com/jetdog8808/Jetdogs-Prefabs-Udon))
 
 It allows you to display the time in any format supported and in any time zone. 
 
