@@ -6,14 +6,19 @@ using VRC.Udon;
 using TMPro;
 using VRC.SDK3.StringLoading;
 using VRC.Udon.Common.Interfaces;
+using VRC.Udon.Common;
 
-[UdonBehaviourSyncMode(BehaviourSyncMode.Continuous)]
+[UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class AnnouncementSystem : UdonSharpBehaviour
 {
     [Space(-8)]
     [Header("World Announcement System | Prefab by Kitto Dev")]
     [Space(-8)]
-    [Header("Last Updated: 9/5/2025 | Version 1.81")]
+    [Header("Last Updated: 11/14/2025 | Version 1.9 `Manual Sync` Update")]
+    
+    [Header("Please run in VRChat to test this prefab.")]
+    [Space(-8)]
+    [Header("This uses networking features that won't work in ClientSim.")]
 
     [Header("Object References")]
     [Tooltip("Audio source to play notification sound. Leave empty for no sound.")]
@@ -65,6 +70,12 @@ public class AnnouncementSystem : UdonSharpBehaviour
 
     [UdonSynced, FieldChangeCallback(nameof(NotificationMessage))]
     private string notificationMessage;
+
+    // When true, we are waiting for the next PostSerialization result to confirm
+    // that the latest notificationMessage was sent successfully. Only then will
+    // we broadcast the DisplayAnnouncement network event to ensure clients read
+    // the up-to-date synced string instead of an old/blank value.
+    private bool awaitingPostSerialization = false;
 
     void Start()
     {
@@ -147,11 +158,43 @@ public class AnnouncementSystem : UdonSharpBehaviour
         {
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
             notificationMessage = "<color=green>Announcement</color> : " + inputField.text;
-            SendCustomNetworkEvent(NetworkEventTarget.All, "DisplayAnnouncement");
+            // Request serialization and wait for OnPostSerialization to confirm
+            awaitingPostSerialization = true;
+            RequestSerialization();
         }
         else
         {
             DisplayNotStaffMessage();
+        }
+    }
+
+    public override void OnPostSerialization(SerializationResult result)
+    {
+        // Only send the DisplayAnnouncement event when we explicitly requested
+        // serialization for a new announcement and it succeeded.
+        if (awaitingPostSerialization)
+        {
+            awaitingPostSerialization = false;
+            if (result.success)
+            {
+                // Broadcast to all clients to display the announcement now that
+                // the synced string should be available to them.
+                SendCustomNetworkEvent(NetworkEventTarget.All, "DisplayAnnouncement");
+            }
+            else
+            {
+                Debug.LogWarning("[AnnouncementSystem] Announcement serialization failed. Will not broadcast.");
+                // Inform the staff member (owner) locally that serialization failed
+                // so they know the announcement wasn't sent.
+                if (Networking.IsOwner(gameObject))
+                {
+                    textMesh.text = "<color=red>Announcement failed to send. Please try again.</color>";
+                    ShowObject();
+                    FadeInText();
+                    // Do not mark as active announcement for others
+                    isAnnouncementActive = false;
+                }
+            }
         }
     }
 
