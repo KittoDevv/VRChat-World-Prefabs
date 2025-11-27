@@ -1,5 +1,6 @@
 # Kitto Dev's Public VRChat World Prefabs
 This is my public, open-source library of VRChat World-related prefabs and code, available for anyone to use in their worlds. You do not need to give credits if you must in your Worlds, but it's always appreciated if you do!
+You can find more in-depth details about the parts and prefabs in this repository by looking through the folders. You'll also find pictures of prefabs there, if included.
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
