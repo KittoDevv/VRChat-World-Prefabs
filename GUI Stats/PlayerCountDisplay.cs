@@ -11,7 +11,7 @@ public class PlayerCountDisplay : UdonSharpBehaviour
     [Space(-8)]
     [Header("Player Count Display | Script by Kitto Dev")]
     [Space(-8)]
-    [Header("Updated 11/7/2025 | Version 1.0")]
+    [Header("Updated 11/19/2025 | Version 1.01")]
 
     [Header("Object References")]
     [Tooltip("Assign any MaskableGraphic text component (Text, TextMeshPro, TextMeshProUGUI).")]
@@ -35,7 +35,8 @@ public class PlayerCountDisplay : UdonSharpBehaviour
 
     public override void OnPlayerLeft(VRCPlayerApi player)
     {
-        UpdatePlayerCount();
+        // Delay update slightly to allow VRC to fully unload the player
+        SendCustomEventDelayedSeconds("UpdatePlayerCount", 0.25f);
     }
 
     private void UpdatePlayerCount()
