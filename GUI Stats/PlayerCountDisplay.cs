@@ -11,7 +11,7 @@ public class PlayerCountDisplay : UdonSharpBehaviour
     [Space(-8)]
     [Header("Player Count Display | Script by Kitto Dev")]
     [Space(-8)]
-    [Header("Updated 11/19/2025 | Version 1.01")]
+    [Header("Updated 11/27/2025 | Version 1.02")]
 
     [Header("Object References")]
     [Tooltip("Assign any MaskableGraphic text component (Text, TextMeshPro, TextMeshProUGUI).")]
@@ -24,26 +24,28 @@ public class PlayerCountDisplay : UdonSharpBehaviour
         if (displayTarget != null)
         {
             displayType = displayTarget.GetType();
-            UpdatePlayerCount();
+            UpdatePlayerCount(VRCPlayerApi.GetPlayerCount());
         }
     }
 
     public override void OnPlayerJoined(VRCPlayerApi player)
     {
-        UpdatePlayerCount();
+        // Always get the current count directly
+        UpdatePlayerCount(VRCPlayerApi.GetPlayerCount());
     }
 
     public override void OnPlayerLeft(VRCPlayerApi player)
     {
-        // Delay update slightly to allow VRC to fully unload the player
-        SendCustomEventDelayedSeconds("UpdatePlayerCount", 0.25f);
+        int count = VRCPlayerApi.GetPlayerCount() - 1;
+        if (count < 1) count = 1;
+        UpdatePlayerCount(count);
     }
 
-    private void UpdatePlayerCount()
+    private void UpdatePlayerCount(int count)
     {
         if (displayTarget == null || displayType == null) return;
 
-        string displayText = $"{VRCPlayerApi.GetPlayerCount()}";
+        string displayText = $"{count}";
 
         if (displayType == typeof(Text))
         {
