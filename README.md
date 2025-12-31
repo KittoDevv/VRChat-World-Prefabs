@@ -1,5 +1,5 @@
 # Notice
-I will soon split the Remote Avatar/World Lists and the Announcement System prefabs into separate Repositories to make them easier to find. You won't find these prefabs here anymore once I create their repository, but the old versions in this repository will stay in their older releases for archival reasons.
+I will soon split the Remote Avatar/World Lists and the Announcement System prefabs into separate Repositories to make them easier to find. You can still find these prefabs here anyway once I create their repository, but the code here may not stay up to date in this repository.
 ---
 # Kitto Dev's Public VRChat World Prefabs
 This is my public, open-source library of VRChat World-related prefabs and code, available for anyone to use in their worlds. You do not need to give credits if you must in your Worlds, but it's always appreciated if you do!
