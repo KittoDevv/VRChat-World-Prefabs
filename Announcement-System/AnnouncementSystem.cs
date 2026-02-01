@@ -14,7 +14,7 @@ public class AnnouncementSystem : UdonSharpBehaviour
     [Space(-8)]
     [Header("World Announcement System | Prefab by Kitto Dev")]
     [Space(-8)]
-    [Header("Last Updated: 11/14/2025 | Version 1.9 `Manual Sync` Update")]
+    [Header("Last Updated: 2/1/2026 | Version 1.10 Announcer Name Update")]
     
     [Header("Please run in VRChat to test this prefab.")]
     [Space(-8)]
@@ -141,11 +141,6 @@ public class AnnouncementSystem : UdonSharpBehaviour
             nextSyncTime = Time.realtimeSinceStartup + syncInterval;
             RequestSerialization();
 
-            if (!notificationMessage.Contains("<color=green>Announcement</color> : "))
-            {
-                notificationMessage = "<color=green>Announcement</color> : " + notificationMessage;
-            }
-
             textMesh.text = notificationMessage;
         }
     }
@@ -157,7 +152,8 @@ public class AnnouncementSystem : UdonSharpBehaviour
         if (!enableStaffCheck || IsStaff(Networking.LocalPlayer.displayName))
         {
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
-            notificationMessage = "<color=green>Announcement</color> : " + inputField.text;
+            string senderName = Networking.LocalPlayer != null ? Networking.LocalPlayer.displayName : "Unknown";
+            notificationMessage = CreateAnnouncementText(inputField.text, senderName);
             // Request serialization and wait for OnPostSerialization to confirm
             awaitingPostSerialization = true;
             RequestSerialization();
@@ -203,7 +199,8 @@ public class AnnouncementSystem : UdonSharpBehaviour
         if (!enableStaffCheck || IsStaff(Networking.LocalPlayer.displayName))
         {
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
-            notificationMessage = inputField.text;
+            string senderName = Networking.LocalPlayer != null ? Networking.LocalPlayer.displayName : "Unknown";
+            notificationMessage = CreateAnnouncementText(inputField.text, senderName);
             RequestSerialization();
         }
         else
@@ -239,6 +236,13 @@ public class AnnouncementSystem : UdonSharpBehaviour
             }
         }
         return false;
+    }
+
+    private string CreateAnnouncementText(string message, string senderName)
+    {
+        if (string.IsNullOrEmpty(senderName)) senderName = "Unknown";
+        if (message == null) message = string.Empty;
+        return "<color=green>Announcement by " + senderName + "</color>: " + message;
     }
 
     public string NotificationMessage
